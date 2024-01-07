@@ -21,10 +21,14 @@
 
       <div class="img-text__right">
         <h3 class="img-text__title">夏にピッタリ！</h3>
-        <p class="img-text__text">桃の栗まんじゅうが新発売です。<br>
-          冷えた麦茶との相性がとても良く、インスタ映えもします。<br>
-          お写真を撮ってぜひ、楽しんでお食事ください。
-        </p>
+        <div class="image-text__texts">
+          <p class="img-text__text">桃の栗まんじゅうが新発売です。</p>
+          <p class="img-text__text">冷えた麦茶との相性がとても良く、インスタ映えもします。</p>
+          <p class="img-text__text">
+            お写真を撮ってぜひ、楽しんでお食事ください。
+          </p>
+        </div>
+
         <a href="" class="img-text__btn">商品詳細をみる</a>
       </div>
     </div>
@@ -37,96 +41,118 @@
     background-color: #fff;
   }
   .img-text__inner {
-    max-width: 1100px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
   }
   .img-text__contents {
     display: flex;
-
+    padding: 80px 50px;
   }
 
   .img-text__left {
     width: 50%;
     position: relative;
+    max-width: 550px;
   }
-  
-.img01 {
-  aspect-ratio: 275 / 309;
-  object-fit: cover;
-  max-width: 275px;
-  display: inline-block;
 
-}
-.img02 {
-  aspect-ratio: 330 / 309;
-  object-fit: cover;
-  max-width: 330px;
-  width: 25.78vw;
-  position: absolute;
-  bottom: 0;
-  right: 0vw;
-}
-.img-text__img img {
-  width: 100%;
-  height: auto;
-  display: inline-block;
-}
-.img-text__right {
-  width: 50%;
-  padding: 60px 70px 70px;
-}
-.img-text__title {
-  font-size: clamp(30px, 8vw, 40px);
-  font-weight: bold;
-  margin: 0;
-}
-.img-text__text {
-  font-size: clamp(15px, 4vw, 16px);
-  line-height: 172%;
-  margin: 20px 0 0;
-}
-.img-text__btn {
-  display: inline-block;
-  padding: 9.5px 30px;
-  font-size: clamp(15px, 4vw, 16px);
-  color: #FEFFFF;
-  text-decoration: none;
-  background-color: #779547;
-  margin-top: 30px;
-}
+  .img01 {
+    aspect-ratio: 275 / 309;
+    object-fit: cover;
+    max-width: 275px;
+    width: 50%;
+    display: inline-block;
 
-@media screen and (max-width: 768px) {
-    .img-text__contents {
-    display: flex;
-    flex-direction: column;
-    gap: 40.5px;
   }
-  .img-text__left {
+  .img02 {
+    aspect-ratio: 330 / 309;
+    object-fit: cover;
+    max-width: 330px;
+    width: 60%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .img-text__img img {
     width: 100%;
-    max-width: 345px;
-    margin: 0 auto;
-    padding: 15px;
+    height: auto;
+    display: inline-block;
   }
   .img-text__right {
-  width: 100%;
-  padding: 40px 0;
-  max-width: 295px;
-  margin: 0 auto;
-}
-.img01 {
-  aspect-ratio: 207 / 232;
-  max-width: 207px;
-  
-}
-.img02 {
-  aspect-ratio: 207 / 193;
-  max-width: 207px;
-  width: 100%;
-  position: absolute;
-  bottom: -41px;
-  right: 0vw;
-}
+    width: 50%;
+    padding: 60px 70px 70px;
+  }
+  .img-text__title {
+    font-size: min(calc(40 / 1280 * 100vw), 40px);
+    margin: 0;
+  }
+  .image-text__texts{
+    margin-top: 20px;
+  }
+  .img-text__text {
+    font-size: min(calc(16 / 1280 * 100vw), 16px);
+    line-height: 172%;
+    letter-spacing: 0.64px;
+    margin: 0;
+  }
+
+  .img-text__text + .img-text__text {
+    margin-top: 10px;
+  }
+
+
+  .img-text__btn {
+    display: inline-block;
+    padding: 9.5px 30px;
+    font-size: min(calc(16 / 1280 * 100vw), 16px);
+    color: #FEFFFF;
+    text-decoration: none;
+    background-color: #779547;
+    margin-top: 30px;
+    letter-spacing: 0.64px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .img-text__contents {
+      display: flex;
+      flex-direction: column;
+      gap: 40.5px;
+      padding: 0 15px;
+    }
+    .img-text__left {
+      width: 100%;
+      max-width: 345px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+    .img-text__right {
+      width: 100%;
+      padding: 40px 0;
+      max-width: 295px;
+      margin: 0 auto;
+    }
+    .img01 {
+      aspect-ratio: 207 / 232;
+      max-width: 207px;
+      width: 100%;
+
+    }
+    .img02 {
+      aspect-ratio: 207 / 193;
+      max-width: 207px;
+      width: 100%;
+      position: absolute;
+      bottom: -41px;
+      right: 0;
+    }
+    .img-text__title {
+
+      font-size: 30px;
+    }
+    .img-text__text {
+      font-size: 15px;
+    }
 
   }
 </style>
