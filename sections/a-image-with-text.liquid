@@ -45,6 +45,7 @@
     display: flex;
 
   }
+
   .img-text__left {
     width: 50%;
     position: relative;
@@ -94,6 +95,40 @@
   background-color: #779547;
   margin-top: 30px;
 }
+
+@media screen and (max-width: 768px) {
+    .img-text__contents {
+    display: flex;
+    flex-direction: column;
+    gap: 40.5px;
+  }
+  .img-text__left {
+    width: 100%;
+    max-width: 345px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  .img-text__right {
+  width: 100%;
+  padding: 40px 0;
+  max-width: 295px;
+  margin: 0 auto;
+}
+.img01 {
+  aspect-ratio: 207 / 232;
+  max-width: 207px;
+  
+}
+.img02 {
+  aspect-ratio: 207 / 193;
+  max-width: 207px;
+  width: 100%;
+  position: absolute;
+  bottom: -41px;
+  right: 0vw;
+}
+
+  }
 </style>
 
 
