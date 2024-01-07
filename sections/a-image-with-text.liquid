@@ -1,0 +1,115 @@
+<section class="img-text">
+  <div class="img-text__inner">
+
+    <div class="img-text__contents">
+
+      <div class="img-text__left">
+        <div class="img-text__imgs">
+          <div class="img-text__img">
+              {% comment %} <img src="{{section.settings.image1 | img_url: 'master'}}" alt=""> {% endcomment %}
+            <img src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top___2_b5c13202-2f8b-45cb-a584-edeee4bec716.jpg?v=1704238380" alt="">
+          </div>
+          <div class="img-text__img">
+              {% comment %} <img src="{{section.settings.image2 | img_url: 'master'}}" alt=""> {% endcomment %}
+            <img src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top___1_e370351a-ab52-4be6-bda6-bc8e7ffd25c9.jpg?v=1704238380" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="img-text__right">
+        <h3 class="img-text__title">夏にピッタリ！</h3>
+        <p class="img-text__text">桃の栗まんじゅうが新発売です。<br>
+          冷えた麦茶との相性がとても良く、インスタ映えもします。<br>
+          お写真を撮ってぜひ、楽しんでお食事ください。
+        </p>
+        <a href="" class="img-text__btn">商品詳細をみる</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .img-text {
+    padding: 82px 0;
+    background-color: #fff;
+  }
+  .img-text__inner {
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .img-text__contents {
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    padding: 50px 80px;
+  }
+  .img-text__left {
+    width: 50%;
+  }
+  .img-text__imgs {
+    display: flex;
+    justify-content: space-between;
+  }
+  .img-text__img {
+    width: 48%;
+  }
+  .img-text__img img {
+    width: 100%;
+  }
+  .img-text__right {
+    width: 50%;
+  }
+  .img-text__title {
+    font-size: clamp(30px, 8vw, 40px);
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .img-text__text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .img-text__btn {
+    display: inline-block;
+    padding: 9.5px 30px;
+    font-size: clamp(15px, 4vw, 16px);
+    color: #FEFFFF;
+    text-decoration: none;
+    background-color: #779547;
+  }
+</style>
+
+
+{% schema %}
+  {
+    "name": "2枚画像付きテキスト",
+    "class": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image1",
+        "label": "画像1"
+      }, {
+        "type": "image_picker",
+        "id": "image2",
+        "label": "画像2"
+      }, {
+        "type": "text",
+        "id": "text1",
+        "label": "テキスト1"
+      }, {
+        "type": "text",
+        "id": "text2",
+        "label": "テキスト2"
+      }
+    ],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "2枚画像付きテキスト"
+      }
+    ]
+  }
+{% endschema %}
