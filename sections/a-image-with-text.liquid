@@ -5,14 +5,17 @@
 
       <div class="img-text__left">
         <div class="img-text__imgs">
-          <div class="img-text__img">
-              {% comment %} <img src="{{section.settings.image1 | img_url: 'master'}}" alt=""> {% endcomment %}
-            <img src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top___2_b5c13202-2f8b-45cb-a584-edeee4bec716.jpg?v=1704238380" alt="">
-          </div>
-          <div class="img-text__img">
-              {% comment %} <img src="{{section.settings.image2 | img_url: 'master'}}" alt=""> {% endcomment %}
-            <img src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top___1_e370351a-ab52-4be6-bda6-bc8e7ffd25c9.jpg?v=1704238380" alt="">
-          </div>
+            {% comment %} <img src="{{section.settings.image1 | img_url: 'master'}}" alt=""> {% endcomment %}
+          <img
+            class="img-text__img img01"
+            src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top___2_b5c13202-2f8b-45cb-a584-edeee4bec716.jpg?v=1704238380"
+            alt="">
+            {% comment %} <img src="{{section.settings.image2 | img_url: 'master'}}" alt=""> {% endcomment %}
+          <img
+            class="img-text__img img02"
+            src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top___1_e370351a-ab52-4be6-bda6-bc8e7ffd25c9.jpg?v=1704238380"
+            alt="">
+
         </div>
       </div>
 
@@ -34,51 +37,63 @@
     background-color: #fff;
   }
   .img-text__inner {
-    max-width: 1180px;
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 40px;
   }
   .img-text__contents {
     display: flex;
-    gap: 70px;
-    align-items: center;
-    padding: 50px 80px;
+
   }
   .img-text__left {
     width: 50%;
+    position: relative;
   }
-  .img-text__imgs {
-    display: flex;
-    justify-content: space-between;
-  }
-  .img-text__img {
-    width: 48%;
-  }
-  .img-text__img img {
-    width: 100%;
-  }
-  .img-text__right {
-    width: 50%;
-  }
-  .img-text__title {
-    font-size: clamp(30px, 8vw, 40px);
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  .img-text__text {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  .img-text__btn {
-    display: inline-block;
-    padding: 9.5px 30px;
-    font-size: clamp(15px, 4vw, 16px);
-    color: #FEFFFF;
-    text-decoration: none;
-    background-color: #779547;
-  }
+  
+.img01 {
+  aspect-ratio: 275 / 309;
+  object-fit: cover;
+  max-width: 275px;
+  display: inline-block;
+
+}
+.img02 {
+  aspect-ratio: 330 / 309;
+  object-fit: cover;
+  max-width: 330px;
+  width: 25.78vw;
+  position: absolute;
+  bottom: 0;
+  right: 0vw;
+}
+.img-text__img img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+.img-text__right {
+  width: 50%;
+  padding: 60px 70px 70px;
+}
+.img-text__title {
+  font-size: clamp(30px, 8vw, 40px);
+  font-weight: bold;
+  margin: 0;
+}
+.img-text__text {
+  font-size: clamp(15px, 4vw, 16px);
+  line-height: 172%;
+  margin: 20px 0 0;
+}
+.img-text__btn {
+  display: inline-block;
+  padding: 9.5px 30px;
+  font-size: clamp(15px, 4vw, 16px);
+  color: #FEFFFF;
+  text-decoration: none;
+  background-color: #779547;
+  margin-top: 30px;
+}
 </style>
 
 
