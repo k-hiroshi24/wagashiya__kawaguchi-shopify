@@ -39,16 +39,22 @@
         "show_text_below": false
       }
     },
-    "34ae1390-6327-401e-a5a0-0caea1a4b142": {
-      "type": "a-image-with-text",
+    "fc44bfce-9664-453d-a8c4-9b55272c2d3f": {
+      "type": "a-img-text",
       "settings": {
         "text1": "",
         "text2": ""
+      }
+    },
+    "baeb9602-e6e4-4015-9452-a18de0a66259": {
+      "type": "a-img-text-wide",
+      "settings": {
       }
     }
   },
   "order": [
     "image_banner",
-    "34ae1390-6327-401e-a5a0-0caea1a4b142"
+    "fc44bfce-9664-453d-a8c4-9b55272c2d3f",
+    "baeb9602-e6e4-4015-9452-a18de0a66259"
   ]
 }

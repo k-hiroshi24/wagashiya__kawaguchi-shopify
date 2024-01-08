@@ -1,0 +1,196 @@
+<section class="img-text-wide">
+  <div class="img-text-wide__title-box">
+    <h2 class="img-text-wide__section-title">
+      タイトルが入ります
+    </h2>
+    <p class="img-text-wide__sub-title">
+      サブテキストが入ります
+    </p>
+  </div>
+  <div class="img-text-wide__inner">
+    <div class="img-text-wide__contents">
+      <div class="img-text-wide-wide__left">
+          {% comment %} <img src="{{section.settings.image1 | img_url: 'master'}}" alt=""> {% endcomment %}
+        <img
+          class="img-text-wide__img"
+          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top_cd9d10c3-3e36-4d0e-9d23-ce9c8f1939d8.jpg?v=1704238381"
+          alt="">
+      </div>
+      <div class="img-text-wide__right">
+        <h3 class="img-text-wide__title">配送料金</h3>
+        <div class="image-text__texts">
+          <p class="img-text-wide__text">全国一律660円（税込）</p>
+          <p class="img-text-wide__text">2品以上で送料無料</p>
+          <p class="img-text-wide__text">
+            品質保持のため、クール便でお届けいたします。</p>
+        </div>
+        <a href="" class="img-text-wide__btn">ボタンテキスト</a>
+      </div>
+    </div>
+    <div class="img-text-wide__contents">
+      <div class="img-text-wide-wide__left">
+          {% comment %} <img src="{{section.settings.image1 | img_url: 'master'}}" alt=""> {% endcomment %}
+        <img
+          class="img-text-wide__img"
+          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top_cd9d10c3-3e36-4d0e-9d23-ce9c8f1939d8.jpg?v=1704238381"
+          alt="">
+      </div>
+      <div class="img-text-wide__right">
+        <h3 class="img-text-wide__title">配送料金</h3>
+        <div class="image-text__texts">
+          <p class="img-text-wide__text">全国一律660円（税込）</p>
+          <p class="img-text-wide__text">2品以上で送料無料</p>
+          <p class="img-text-wide__text">
+            品質保持のため、クール便でお届けいたします。</p>
+        </div>
+        <a href="" class="img-text-wide__btn">ボタンテキスト</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .img-text-wide__title-box {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+  .img-text-wide__section-title {
+    font-size: min(calc(24 / 1280 * 100vw), 24px);
+    margin: 0;
+    padding: 0;
+  }
+  .img-text-wide__sub-title {
+    font-size: min(calc(16 / 1280 * 100vw), 16px);
+    margin: 10px 0 0;
+    padding: 0;
+  }
+  .img-text-wide__wide {
+    padding: 0;
+  }
+
+  .img-text-wide__contents {
+    display: flex;
+    justify-content: center;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .img-text-wide__contents:nth-child(odd) {
+    flex-direction: row-reverse;
+    display: flex;
+  }
+  .img-text-wide__left {
+    width: 50%;
+  }
+
+  .img-text-wide__img {
+    aspect-ratio: 640 / 383;
+    object-fit: cover;
+    max-width: 640px;
+    width: 100%;
+    display: inline-block;
+  }
+  .img-text-wide__right {
+    width: 50%;
+    padding: 64px 8.98%;
+  }
+  .img-text-wide__title {
+    font-size: min(calc(40 / 1280 * 100vw), 40px);
+    margin: 0;
+  }
+  .image-text__texts {
+    margin-top: 20px;
+  }
+  .img-text-wide__text {
+    font-size: min(calc(16 / 1280 * 100vw), 16px);
+    line-height: 172%;
+    letter-spacing: 0.64px;
+    margin: 0;
+  }
+
+  .img-text-wide__text + .img-text-wide__text {
+    margin-top: 10px;
+  }
+
+
+  .img-text-wide__btn {
+    display: inline-block;
+    padding: 9.5px 30px;
+    font-size: min(calc(16 / 1280 * 100vw), 16px);
+    color: #FEFFFF;
+    text-decoration: none;
+    background-color: #779547;
+    margin-top: 30px;
+    letter-spacing: 0.64px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .img-text-wide__contents {
+      flex-direction: column;
+      gap: 40.5px;
+      padding: 0 15px;
+    }
+    .img-text-wide__left {
+      width: 100%;
+      max-width: 345px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+    .img-text-wide__right {
+      width: 100%;
+      padding: 40px 0;
+      max-width: 295px;
+      margin: 0 auto;
+    }
+    .img01 {
+      aspect-ratio: 207 / 232;
+      max-width: 207px;
+      width: 100%;
+
+    }
+    .img02 {
+      aspect-ratio: 207 / 193;
+      max-width: 207px;
+      width: 100%;
+      position: absolute;
+      bottom: -41px;
+      right: 0;
+    }
+    .img-text-wide__title {
+
+      font-size: 30px;
+    }
+    .img-text-wide__text {
+      font-size: 15px;
+    }
+    .img-text-wide__btn {
+      font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+  
+
+
+
+
+
+  
+  }
+  
+</style>
+
+{% schema %}
+  {
+    "name": "テキスト付き画像（フルワイド）",
+    "class": "img-text__wide",
+    "settings": [],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "テキスト付き画像（フルワイド）"
+      }
+    ]
+  }
+{% endschema %}
