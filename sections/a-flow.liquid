@@ -1,0 +1,173 @@
+{{ 'a-custom.css' | asset_url | stylesheet_tag }}
+
+<section class="flow">
+  <div class="flow__inner inner">
+    <ul class="flow__contents">
+      <li class="flow__content">
+        <div class="flow__left">
+          <img src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top___1_f2162848-fa2a-4b38-870a-d8c1e5ac83a9.jpg?v=1704238380" alt="">
+        </div>
+        <div class="flow__right">
+          <span class="flow__number">其の一</span>
+          <h3 class="flow__title">調理</h3>
+          <p class="flow__text">お客様ご注文後に、ご注文の和菓子は職人の手によって一つ一つ丁寧に調理されます。当店では、伝統的な製法や秘伝のレシピを守りながら、最高品質の和菓子を提供するために努めています。</p>
+        </div>
+      </li>
+      <li class="flow__content">
+        <div class="flow__left">
+          <img src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top___1_f2162848-fa2a-4b38-870a-d8c1e5ac83a9.jpg?v=1704238380" alt="">
+        </div>
+        <div class="flow__right">
+          <span class="flow__number">其の一</span>
+          <h3 class="flow__title">調理</h3>
+          <p class="flow__text">お客様ご注文後に、ご注文の和菓子は職人の手によって一つ一つ丁寧に調理されます。当店では、伝統的な製法や秘伝のレシピを守りながら、最高品質の和菓子を提供するために努めています。</p>
+        </div>
+      </li>
+      <li class="flow__content">
+        <div class="flow__left">
+          <img src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top___1_f2162848-fa2a-4b38-870a-d8c1e5ac83a9.jpg?v=1704238380" alt="">
+        </div>
+        <div class="flow__right">
+          <span class="flow__number">其の一</span>
+          <h3 class="flow__title">調理</h3>
+          <p class="flow__text">お客様ご注文後に、ご注文の和菓子は職人の手によって一つ一つ丁寧に調理されます。当店では、伝統的な製法や秘伝のレシピを守りながら、最高品質の和菓子を提供するために努めています。</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+ 
+  .flow {
+    padding: 0px 0;
+  }
+
+  .flow__contents {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .flow__content {
+    margin: 0;;
+    display: flex;
+    gap: 2.76%;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .flow__content + .flow__content {
+    margin-top: 48px;
+  }
+
+  .flow__left {
+    aspect-ratio: 320 / 180;
+    object-fit: cover;
+    max-width: 320px;
+    width: 100%;
+    display: inline-block;
+
+  }
+  .flow__left img {
+    width: 100%;
+    height: auto;
+
+  }
+
+  .flow__right {
+   
+  }
+
+  .flow__number {
+    display: block;
+    font-size: min(calc(18 / 1280 * 100vw), 18px);
+    line-height: 116%;
+    color: #779547;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #779547;
+    max-width: 156px;
+    width: 100%;
+  }
+
+  .flow__title {
+    font-size: min(calc(24 / 1280 * 100vw), 24px);
+    margin: 16px 0 0;
+  }
+
+  .flow__text {
+    font-size: min(calc(16 / 1280 * 100vw), 16px);
+    line-height: 172%;
+    letter-spacing: 0.64px;
+    margin: 16px 0 0;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .flow {
+      padding: 0px 0;
+    }
+
+    .flow__content {
+      flex-direction: column;
+      gap: 2.76%;
+      width: 100%;
+    }
+    .flow__left {
+      max-width: 100%;
+      display: inline-block;
+      order: 2;
+      margin-top: 24px;
+    }
+    .flow__left img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .flow__right {
+      margin-top: 24px;
+      display: contents;
+    }
+
+  .flow__number {
+    display: block;
+    font-size: 17px;
+    line-height: 116%;
+    color: #779547;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #779547;
+    max-width: 156px;
+    width: 100%;
+    order: 1;
+
+  }
+
+  .flow__title {
+    font-size: 20px;
+    margin: 24px 0 0;
+    order: 3;
+  }
+
+  .flow__text {
+    font-size: 15px;
+    line-height: 172%;
+    letter-spacing: 0.64px;
+    margin: 16px 0 0;
+    order: 4;
+  }
+}
+</style>
+
+{% schema %}
+  {
+    "name": "フロー",
+    "class": "banner-section",
+    "settings": [],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "フロー"
+      }
+    ]
+  }
+{% endschema %}

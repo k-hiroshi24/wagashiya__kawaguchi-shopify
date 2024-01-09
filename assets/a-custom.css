@@ -1,1 +1,13 @@
-.section-template--17193416261883__0e7744e0-5e72-4c7f-9bdb-1b69fc05c26f-padding gradient color-background-1
+
+.inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media screen and (max-width: 768px) {
+  .inner {
+    width: 100%;
+    padding: 0 15px;
+  }
+}

@@ -1,9 +1,11 @@
+{{ 'a-custom.css' | asset_url | stylesheet_tag }}
+
 <section class="img-text-wide">
-  <div class="img-text-wide__title-box">
-    <h2 class="img-text-wide__section-title">
+  <div class="img-text-wide__title-box common-title__box">
+    <h2 class="img-text-wide__section-title common-title__title ">
       タイトルが入ります
     </h2>
-    <p class="img-text-wide__sub-title">
+    <p class="img-text-wide__sub-title common-title__sub-title">
       サブテキストが入ります
     </p>
   </div>
@@ -85,6 +87,7 @@
     margin: 10px 0 0;
     padding: 0;
   }
+
   .img-text-wide__wide {
     padding: 0;
   }
@@ -173,7 +176,7 @@
   }
     .img-text-wide__left {
       width: 100%;
-      max-width: 345px;
+      /* max-width: 345px; */
       margin: 0 auto;
       padding: 15px;
     }
@@ -184,6 +187,8 @@
 
     .img-text-wide__img {
     aspect-ratio: 375 / 199;
+    max-width: 100%;
+   
   }
   
     .img-text-wide__title {

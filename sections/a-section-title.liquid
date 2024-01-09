@@ -1,0 +1,57 @@
+<section class="section-title">
+  <h2 class="section-title__title ">
+    タイトルが入ります
+  </h2>
+  <p class="section-title__sub-title">
+    サブテキストが入ります
+  </p>
+</section>
+
+<style>
+  .section-title {
+    max-width: 1200px;
+    width: 100%;
+    margin: 80px auto 40px;
+    padding: 0px 50px ;
+  }
+  .section-title__title {
+    font-size: min(calc(24 / 1280 * 100vw), 24px);
+    margin: 0;
+    padding: 0;
+  }
+  .section-title__sub-title {
+    font-size: min(calc(16 / 1280 * 100vw), 16px);
+    margin: 10px 0 0;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .section-title {
+      padding: 0 15px;
+    }
+    .section-title__title {
+      font-size: min(calc(20 / 375 * 100vw), 20px);
+      margin: 0;
+      padding: 0;
+    }
+    .section-title__sub-title {
+      font-size: min(calc(15 / 375 * 100vw), 15px);
+      margin: 10px 0 0;
+      padding: 0;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "セクションタイトル",
+    "class": "banner-section",
+    "settings": [],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "セクションタイトル"
+      }
+    ]
+  }
+{% endschema %}

@@ -39,6 +39,11 @@
         "show_text_below": false
       }
     },
+    "9a5d9457-f5d7-4d49-b97b-e1c557eb2528": {
+      "type": "a-ranking",
+      "settings": {
+      }
+    },
     "fc44bfce-9664-453d-a8c4-9b55272c2d3f": {
       "type": "a-img-text",
       "settings": {
@@ -50,11 +55,24 @@
       "type": "a-img-text-wide",
       "settings": {
       }
+    },
+    "9305dd2f-9803-4e0a-83c7-185f50e973eb": {
+      "type": "a-section-title",
+      "settings": {
+      }
+    },
+    "3ecf4d91-7269-4801-a3a8-00dda6ab2f23": {
+      "type": "a-flow",
+      "settings": {
+      }
     }
   },
   "order": [
     "image_banner",
+    "9a5d9457-f5d7-4d49-b97b-e1c557eb2528",
     "fc44bfce-9664-453d-a8c4-9b55272c2d3f",
-    "baeb9602-e6e4-4015-9452-a18de0a66259"
+    "baeb9602-e6e4-4015-9452-a18de0a66259",
+    "9305dd2f-9803-4e0a-83c7-185f50e973eb",
+    "3ecf4d91-7269-4801-a3a8-00dda6ab2f23"
   ]
 }
