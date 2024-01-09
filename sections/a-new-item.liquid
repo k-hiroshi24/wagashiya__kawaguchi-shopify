@@ -10,56 +10,44 @@
     </p>
   </section>
   <div class="ranking__inner grid-card__inner inner">
-    <ul class="ranking__items grid-card__items">
-      <li class="ranking__item grid-card__item">
+    <ul class="new-item__items grid-card__items">
+      <li class="new-item__item grid-card__item">
         <img
-          class="ranking__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_cc027713-ec46-4e7a-b361-70d359196062.jpg?v=1704238355"
+          class="new-item__img grid-card__img"
+          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_d69b8703-927a-414d-b7ef-78d37c3991bb.jpg?v=1704238354"
           alt="">
-        <span class="ranking__number">
-          一
-        </span>
-        <h3 class="ranking__title grid-card__title">水羊羹（楓）</h3>
+        <h3 class="ranking__title grid-card__title">わらび餅</h3>
         <p class="ranking__price grid-card__price">¥600</p>
       </li>
-      <li class="ranking__item grid-card__item">
+      <li class="new-item__item grid-card__item">
         <img
-          class="ranking__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_cc027713-ec46-4e7a-b361-70d359196062.jpg?v=1704238355"
+          class="new-item__img grid-card__img"
+          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_d69b8703-927a-414d-b7ef-78d37c3991bb.jpg?v=1704238354"
           alt="">
-        <span class="ranking__number">
-          一
-        </span>
-        <h3 class="ranking__title grid-card__title">水羊羹（楓）</h3>
+        <h3 class="ranking__title grid-card__title">わらび餅</h3>
         <p class="ranking__price grid-card__price">¥600</p>
       </li>
-      <li class="ranking__item grid-card__item">
+      <li class="new-item__item grid-card__item">
         <img
-          class="ranking__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_cc027713-ec46-4e7a-b361-70d359196062.jpg?v=1704238355"
+          class="new-item__img grid-card__img"
+          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_d69b8703-927a-414d-b7ef-78d37c3991bb.jpg?v=1704238354"
           alt="">
-        <h3 class="ranking__title grid-card__title">水羊羹（楓）</h3>
+        <h3 class="ranking__title grid-card__title">わらび餅</h3>
         <p class="ranking__price grid-card__price">¥600</p>
       </li>
-      <li class="ranking__item grid-card__item">
+      <li class="new-item__item grid-card__item">
         <img
-          class="ranking__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_cc027713-ec46-4e7a-b361-70d359196062.jpg?v=1704238355"
+          class="new-item__img grid-card__img"
+          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_d69b8703-927a-414d-b7ef-78d37c3991bb.jpg?v=1704238354"
           alt="">
-        <h3 class="ranking__title grid-card__title">水羊羹（楓）</h3>
+        <h3 class="ranking__title grid-card__title">わらび餅</h3>
         <p class="ranking__price grid-card__price">¥600</p>
       </li>
-      <li class="ranking__item grid-card__item">
-        <img
-          class="ranking__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_cc027713-ec46-4e7a-b361-70d359196062.jpg?v=1704238355"
-          alt="">
-        <h3 class="ranking__title grid-card__title">水羊羹（楓）</h3>
-        <p class="ranking__price grid-card__price">¥600</p>
-      </li>
+      
+      
     </ul>
     <div class="ranking__btn">
-      <a href="">商品詳細をみる</a>
+      <a href="">もっとみる</a>
     </div>
 
   </div>
@@ -78,39 +66,26 @@
     padding: 40px 0;
   }
 
-.grid-card__items {
+.grid-card__items.new-item__items{
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
-  /* padding: 0 50px; */
 }
 
-.grid-card__item {
-  max-width: 213.6px;
+.grid-card__item.new-item__item{
+  max-width: 269px;
   width: 100%;
   padding-bottom: 17px;
   position: relative;
 
 }
 
-.grid-card__img {
+.grid-card__img.new-item__img {
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  max-width: 213px;
+  max-width: 269px;
   width: 100%;
   display: inline-block;
-}
-
-.ranking__number {
-  margin: 0;
-  padding: 6.5px 7.5px 7.5px;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: min(calc(24 / 1280 * 100vw), 24px);
-  color: #fff;
-  background: #C79B33;
 }
 .grid-card__title {
   margin: 17px 0 0;
@@ -148,7 +123,7 @@
   .grid-card {
     padding: 25px 0;
   }
-  .grid-card__items {
+  .grid-card__items.new-item__items {
     grid-template-columns: repeat(2, 1fr);
     gap: 4px;
     padding: 0;
@@ -160,10 +135,6 @@
     padding-bottom: 17px;
     position: relative;
 
-  }
-  .ranking__number {
-    font-size: min(calc(20 / 375 * 100vw), 20px);
-    padding: 9px 14px 10px;
   }
 
   .grid-card__img {
@@ -193,13 +164,13 @@
 
 {% schema %}
   {
-    "name": "月間ランキング",
+    "name": "新着情報",
     "class": "banner-section",
     "settings": [],
     "blocks": [],
     "presets": [
       {
-        "name": "月間ランキング"
+        "name": "新着情報"
       }
     ]
   }
