@@ -51,6 +51,11 @@
         "text2": ""
       }
     },
+    "74535ea2-99fc-499e-a67a-ba00bf6be8b8": {
+      "type": "a-faq",
+      "settings": {
+      }
+    },
     "baeb9602-e6e4-4015-9452-a18de0a66259": {
       "type": "a-img-text-wide",
       "settings": {
@@ -70,15 +75,22 @@
       "type": "a-flow",
       "settings": {
       }
+    },
+    "69dc22c0-0f38-4d8b-bc2d-8b93cce301ac": {
+      "type": "a-faq",
+      "settings": {
+      }
     }
   },
   "order": [
     "image_banner",
     "9a5d9457-f5d7-4d49-b97b-e1c557eb2528",
     "fc44bfce-9664-453d-a8c4-9b55272c2d3f",
+    "74535ea2-99fc-499e-a67a-ba00bf6be8b8",
     "baeb9602-e6e4-4015-9452-a18de0a66259",
     "20a0f187-2820-4c34-89fd-97c189588c73",
     "9305dd2f-9803-4e0a-83c7-185f50e973eb",
-    "3ecf4d91-7269-4801-a3a8-00dda6ab2f23"
+    "3ecf4d91-7269-4801-a3a8-00dda6ab2f23",
+    "69dc22c0-0f38-4d8b-bc2d-8b93cce301ac"
   ]
 }

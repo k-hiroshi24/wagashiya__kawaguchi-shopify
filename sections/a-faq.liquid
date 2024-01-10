@@ -1,0 +1,138 @@
+<section class="faq">
+    <div class="section-title">
+      <h2 class="section-title__title">
+        タイトルが入ります
+      </h2>
+      <p class="section-title__sub-title">
+        サブテキストが入ります
+      </p>
+   </div>
+      <div class="faq__inner inner">
+        <dl class="faq__items">
+         <div class="faq__item">
+           <dt class="faq__q">
+              <p>質問が入ります</p>
+           </dt>
+           <dd class="faq__a">
+             <p>答えが入ります答えが入ります答えが入ります答えが入ります答えが入ります答えが入ります答えが入ります
+                 答えが入ります答えが入ります答えが入ります</p>
+           </dd>
+               <span class="rine rine01"></span>
+               <span class="rine rine02"></span>
+          </div>
+        <div class="faq__item">
+        <dt class="faq__q">
+          <p>質問が入ります</p>
+        </dt>
+        <dd class="faq__a">
+          <p>答えが入ります答えが入ります答えが入ります答えが入ります答えが入ります答えが入ります答えが入ります
+            答えが入ります答えが入ります答えが入ります</p>
+        </dd>
+        </div>
+        <div class="faq__item">
+        <dt class="faq__q">
+          <p>質問が入ります</p>
+        </dt>
+        <dd class="faq__a">
+          <p>答えが入ります答えが入ります答えが入ります答えが入ります答えが入ります答えが入ります答えが入ります
+            答えが入ります答えが入ります答えが入ります</p>
+        </dd>
+        </div>
+      </dl>
+</section>
+
+<style>
+.faq {
+padding: 80px 0;
+}
+
+.faq__items {
+margin-top: 40px;
+}
+
+.faq__item + .faq__item{
+margin-top: 16px;
+}
+.faq__item{
+  position: relative;
+
+}
+.faq__q {
+padding: 16px 16px 16px 16px;
+/* background-color: #779547; */
+background-color: #F0F1ED;
+}
+.faq__q p::before{
+content: "Q";
+font-size: min(calc(16 / 1280 * 100vw), 16px);
+/* color: #fff; */
+color: #779547;
+padding-right: 16px;
+display: inline-block;
+}
+
+.faq__q p{
+  margin: 0;
+  /* padding-left: 16px; */
+  font-size: min(calc(16 / 1280 * 100vw), 16px);
+  letter-spacing:0.64% ;
+  /* color: #fff; */
+  color: 020202;
+}
+
+.faq__a {
+margin: 0;
+padding: 16px 56px 16px 46px;
+background-color: #F0F1ED;
+display: none;
+}
+.faq__a p{
+margin: 0;
+font-size: min(calc(16 / 1280 * 100vw), 16px);
+line-height:172% ;
+letter-spacing: 0.64px;
+}
+
+.rine{
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #779547;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  z-index: 1;
+}
+.rine02{
+  transform: rotate(90deg);
+}
+
+
+@media screen and (max-width: 768px) {
+
+.faq__q p::before{
+font-size: min(calc(16/ 375 * 100vw), 16px);
+}
+  .faq__a p{
+font-size: min(calc(15 / 375 * 100vw), 15px);
+}
+
+.faq__q p{
+  font-size: min(calc(15 / 375 * 100vw), 15px);
+}
+}
+</style>
+
+{% schema %}
+  {
+    "name": "FAQ",
+    "class": "faq-section",
+    "settings": [],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "FAQ"
+      }
+    ]
+  }
+{% endschema %}
