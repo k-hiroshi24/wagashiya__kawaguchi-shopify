@@ -1,0 +1,188 @@
+<footer class="custom-footer">
+  <div class="custom-footer__inner inner">
+    <div class="custom-footer__contents">
+      <div class="custom-footer__left">
+        <div class="custom-footer__logo">
+          <img src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/logo.png?v=1704238354" alt="">
+        </div>
+        <div class="custom-footer__sns">
+            <h2>sns</h2>
+        </div>
+        <div class="custom-footer__maile">
+            <h2>メール</h2>
+        </div>
+      </div>
+      <div class="custom-footer__right">
+        <ul class="custom-footer__menu">
+          <li class="custom-footer__menu-item">
+            <a href="" class="custom-footer__menu-link">利用規約</a>
+          </li>
+          <li class="custom-footer__menu-item">
+            <a href="" class="custom-footer__menu-link">プライバシーポリシー</a>
+          </li>
+          <li class="custom-footer__menu-item">
+            <a href="" class="custom-footer__menu-link">特定商法取引に基づく表記</a>
+          </li>
+          <li class="custom-footer__menu-item">
+            <a href="" class="custom-footer__menu-link">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+.custom-footer {
+padding: 80px 0;
+background-color: #F0F1ED;
+}
+
+.custom-footer__inner {
+
+}
+
+.custom-footer__contents {
+display: flex;
+gap: 8px;
+align-items: flex-end;
+}
+
+.custom-footer__left {
+width: 50%;
+}
+
+.custom-footer__logo {
+max-width: 103px;
+width: 100%;
+aspect-ratio: 103 / 40;
+
+}
+.custom-footer__logo img {
+width: 100%;
+display: inline-block;
+}
+
+.custom-footer__sns {
+
+}
+
+.custom-footer__maile {
+
+}
+
+.custom-footer__right {
+width: 50%;
+
+}
+
+.custom-footer__menu {
+text-align: end;
+}
+
+.custom-footer__menu-item {
+
+}
+.custom-footer__menu-item + .custom-footer__menu-item {
+    margin-top: 5px;
+}
+
+
+.custom-footer__menu-link {
+text-decoration: none;
+color: #020202;
+font-size: 14px;
+font-size: min(calc(14 / 1280 * 100vw), 14px);
+font-weight: 400;
+line-height: 150%; 
+letter-spacing: 0.28px;
+margin: 0;
+padding: 0;
+display: block;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .custom-footer {
+padding: 40px 0;
+}
+
+.custom-footer__contents {
+display: flex;
+flex-direction: column;
+gap: 40px;
+align-items: flex-start;
+}
+
+.custom-footer__left {
+width: 50%;
+display: contents;
+}
+
+.custom-footer__logo {
+max-width: 103px;
+width: 100%;
+aspect-ratio: 103 / 40;
+
+}
+.custom-footer__logo img {
+width: 100%;
+display: inline-block;
+}
+
+.custom-footer__sns {
+
+}
+
+.custom-footer__maile {
+order: 1;
+}
+
+.custom-footer__right {
+width: 50%;
+
+}
+
+.custom-footer__menu {
+text-align: start;
+}
+
+.custom-footer__menu-item {
+
+}
+.custom-footer__menu-item + .custom-footer__menu-item {
+    margin-top: 20px;
+}
+
+
+.custom-footer__menu-link {
+text-decoration: none;
+color: #020202;
+font-size: 14px;
+font-size: min(calc(14 / 375 * 100vw), 14px);
+font-weight: 400;
+line-height: 150%; 
+letter-spacing: 0.28px;
+margin: 0;
+padding: 0;
+display: block;
+}
+}
+
+
+</style>
+
+{% schema %}
+  {
+    "name": "カスタムフッター",
+    "class": "custom-footer",
+    "settings": [],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "カスタムフッター"
+      }
+    ]
+  }
+{% endschema %}

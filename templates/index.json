@@ -46,6 +46,11 @@
       "type": "a-faq",
       "settings": {
       }
+    },
+    "a_custom_footer_UMeyP9": {
+      "type": "a-custom-footer",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -57,6 +62,7 @@
     "20a0f187-2820-4c34-89fd-97c189588c73",
     "9305dd2f-9803-4e0a-83c7-185f50e973eb",
     "3ecf4d91-7269-4801-a3a8-00dda6ab2f23",
-    "69dc22c0-0f38-4d8b-bc2d-8b93cce301ac"
+    "69dc22c0-0f38-4d8b-bc2d-8b93cce301ac",
+    "a_custom_footer_UMeyP9"
   ]
 }
