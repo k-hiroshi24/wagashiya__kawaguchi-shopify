@@ -9,7 +9,7 @@
 -%}
 
 <footer class="custom-footer">
-  <div class="custom-footer__inner inner">
+  <div class="custom-footer__inner ">
     <div class="custom-footer__contents">
       <div class="custom-footer__left">
         <div class="custom-footer__logo">
@@ -18,8 +18,69 @@
         {%- if section.settings.show_social and has_social_icons -%}
             {%- render 'a-social-icons', class: 'footer__list-social' -%}
           {%- endif -%}
-        <div class="custom-footer__maile">
-          <h2>メール</h2>
+        <div class="custom-footer__mail">
+            <div class="footer-block__newsletter custom-footer__mail-heading">
+                {%- if section.settings.coustom_newsletter_heading != blank -%}
+                  <h2 class="footer-block__heading inline-richtext">{{ section.settings.coustom_newsletter_heading }}</h2>
+                {%- endif -%}
+                {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter' -%}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <div class="newsletter-form__field-wrapper">
+                    <div class="field">
+                      <input
+                        id="NewsletterForm--{{ section.id }}"
+                        type="email"
+                        name="contact[email]"
+                        class="field__input"
+                        value="{{ form.email }}"
+                        aria-required="true"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        autocomplete="email"
+                        {% if form.errors %}
+                          autofocus
+                          aria-invalid="true"
+                          aria-describedby="ContactFooter-error"
+                        {% elsif form.posted_successfully? %}
+                          aria-describedby="ContactFooter-success"
+                        {% endif %}
+                        placeholder="{{ 'newsletter.label' | t }}"
+                        required
+                      >
+                      <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                        {{ 'newsletter.label' | t }}
+                      </label>
+                      <button
+                        type="submit"
+                        class="newsletter-form__button field__button"
+                        name="commit"
+                        id="Subscribe"
+                        aria-label="{{ 'newsletter.button_label' | t }}"
+                      >
+                        {% render 'icon-arrow' %}
+                      </button>
+                    </div>
+                    {%- if form.errors -%}
+                      <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                        {%- render 'icon-error' -%}
+                        {{- form.errors.translated_fields.email | capitalize }}
+                        {{ form.errors.messages.email -}}
+                      </small>
+                    {%- endif -%}
+                  </div>
+                  {%- if form.posted_successfully? -%}
+                    <h3
+                      class="newsletter-form__message newsletter-form__message--success form__message"
+                      id="ContactFooter-success"
+                      tabindex="-1"
+                      autofocus
+                    >
+                      {% render 'icon-success' -%}
+                      {{- 'newsletter.success' | t }}
+                    </h3>
+                  {%- endif -%}
+                {%- endform -%}
+              </div>
         </div>
       </div>
       <div class="custom-footer__right">
@@ -43,17 +104,20 @@
 </footer>
 
 <style>
+   
   .custom-footer {
-    padding: 80px 0;
-    background-color: #F0F1ED;
-  }
-
-  .custom-footer__inner {}
+      background-color: #F0F1ED;
+    }
+    
+    .custom-footer__inner {
+        padding: 80px 40px;
+    }
 
 .custom-footer__contents {
   display: flex;
   gap: 8px;
   align-items: flex-end;
+  padding: 0 50px;
 }
 
 .custom-footer__left {
@@ -73,8 +137,16 @@
 
 .custom-footer__sns {}
 
-.custom-footer__maile {}
+.custom-footer__mail {}
 
+.footer-block__newsletter.custom-footer__mail-heading{
+    text-align: start;
+    margin-top: 40px;
+}
+.custom-footer__mail-heading h2{
+    font-size: min(calc(16 / 1280 * 100vw), 16px);
+    line-height: 116%;
+}
 .custom-footer__right {
   width: 50%;
 
@@ -82,6 +154,7 @@
 
 .custom-footer__menu {
   text-align: end;
+  margin-top: 62px;
 }
 
 .custom-footer__menu-item {}
@@ -106,18 +179,22 @@
 
 @media screen and (max-width: 768px) {
   .custom-footer {
-    padding: 40px 0;
+
   }
+  .custom-footer__inner {
+        padding: 40px;
+    }
 
   .custom-footer__contents {
     display: flex;
     flex-direction: column;
     gap: 0;
     align-items: flex-start;
+    padding: 0;
   }
 
   .custom-footer__left {
-    width: 50%;
+    width: 100%;
     display: contents;
   }
 
@@ -125,6 +202,7 @@
     max-width: 103px;
     width: 100%;
     aspect-ratio: 103 / 40;
+    object-fit: cover;
 
   }
   .custom-footer__logo img {
@@ -134,18 +212,18 @@
 
   .custom-footer__sns {}
 
-.custom-footer__maile {
+.custom-footer__mail {
   order: 1;
 }
 
 .custom-footer__right {
-  width: 50%;
+    width: 100%;
 
 }
 
 .custom-footer__menu {
   text-align: start;
-  margin-top: 62px;
+  
 }
 
 .custom-footer__menu-item {}
@@ -153,7 +231,10 @@
   margin-top: 20px;
 }
 
-
+.custom-footer__mail-heading h2{
+    font-size: min(calc(16 / 375 * 100vw), 16px);
+    line-height: 116%;
+}
 .custom-footer__menu-link {
   text-decoration: none;
   color: #020202;
@@ -181,6 +262,12 @@
         "id": "show_social",
         "default": true,
         "label": "SNSアイコンを表示する"
+      },
+      {
+        "type": "text",
+        "id": "coustom_newsletter_heading",
+        "default": "メールマガジン登録",
+        "label": "メールマガジン登録の見出し"
       }
     ],
     "blocks": [],

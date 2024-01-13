@@ -43,8 +43,8 @@
         <h3 class="ranking__title grid-card__title">わらび餅</h3>
         <p class="ranking__price grid-card__price">¥600</p>
       </li>
-      
-      
+
+
     </ul>
     <div class="ranking__btn">
       <a href="">もっとみる</a>
@@ -62,104 +62,94 @@
   .section-title.ranking-title {
     margin-top: 0;
   }
-  .grid-card {
-    padding: 40px 0;
-  }
 
-.grid-card__items.new-item__items{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-
-.grid-card__item.new-item__item{
-  max-width: 269px;
-  width: 100%;
-  padding-bottom: 17px;
-  position: relative;
-
-}
-
-.grid-card__img.new-item__img {
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  max-width: 269px;
-  width: 100%;
-  display: inline-block;
-}
-.grid-card__title {
-  margin: 17px 0 0;
-  font-size: min(calc(16 / 1280 * 100vw), 16px);
-  line-height: 172%;
-  letter-spacing: 0.64;
-}
-.grid-card__price {
-  margin: 7px 0 0;
-  font-size: min(calc(16 / 1280 * 100vw), 16px);
-  line-height: 172%;
-  letter-spacing: 0.64;
-}
-.ranking__btn {
-  margin-top: 10px;
-  text-align: center;
-}
-.ranking__btn a {
-  letter-spacing: 0.64px;
-  font-size: min(calc(16 / 1280 * 100vw), 16px);
-  color: #FEFFFF;
-  background-color: #779547;
-  padding: 9.5px 30px;
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
-}
-@media screen and (max-width: 750px) {
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .grid-card {
-    padding: 25px 0;
-  }
   .grid-card__items.new-item__items {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
-    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
   }
 
-
-  .grid-card__item {
-    max-width: 100%;
+  .grid-card__item.new-item__item {
+    max-width: 269px;
+    width: 100%;
     padding-bottom: 17px;
     position: relative;
 
   }
 
-  .grid-card__img {
-    max-width: 100%;
+  .grid-card__img.new-item__img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    max-width: 269px;
+    width: 100%;
+    display: inline-block;
   }
-
   .grid-card__title {
-    margin: 13px 0 0;
-    font-size: min(calc(15 / 375 * 100vw), 15px);
+    margin: 17px 0 0;
+    font-size: min(calc(16 / 1280 * 100vw), 16px);
+    line-height: 172%;
+    letter-spacing: 0.64;
   }
-
   .grid-card__price {
     margin: 7px 0 0;
-    font-size: min(calc(15 / 375 * 100vw), 15px);
+    font-size: min(calc(16 / 1280 * 100vw), 16px);
+    line-height: 172%;
+    letter-spacing: 0.64;
   }
-
   .ranking__btn {
     margin-top: 10px;
     text-align: center;
-
   }
   .ranking__btn a {
-    font-size: min(calc(15 / 375 * 100vw), 15px);
+    letter-spacing: 0.64px;
+    font-size: min(calc(16 / 1280 * 100vw), 16px);
+    color: #FEFFFF;
+    background-color: #779547;
+    padding: 9.5px 30px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
   }
-}
+  @media screen and (max-width: 750px) {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .grid-card__items.new-item__items {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+      padding: 0;
+    }
+    .grid-card__item {
+      max-width: 100%;
+      padding-bottom: 17px;
+      position: relative;
+
+    }
+    .grid-card__img {
+      max-width: 100%;
+    }
+
+    .grid-card__title {
+      margin: 13px 0 0;
+      font-size: min(calc(15 / 375 * 100vw), 15px);
+    }
+
+    .grid-card__price {
+      margin: 7px 0 0;
+      font-size: min(calc(15 / 375 * 100vw), 15px);
+    }
+
+    .ranking__btn {
+      margin-top: 10px;
+      text-align: center;
+
+    }
+    .ranking__btn a {
+      font-size: min(calc(15 / 375 * 100vw), 15px);
+    }
+  }
 </style>
 
 {% schema %}
