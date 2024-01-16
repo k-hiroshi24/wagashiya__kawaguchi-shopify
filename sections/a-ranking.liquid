@@ -3,63 +3,38 @@
 <section class="ranking grid-card">
   <section class="section-title ranking-title">
     <h2 class="section-title__title ">
-      タイトルが入ります
+      {{ section.settings.title }}
     </h2>
     <p class="section-title__sub-title">
-      サブテキストが入ります
+      {{ section.settings.sub_title }}
     </p>
   </section>
   <div class="ranking__inner grid-card__inner inner">
     <ul class="ranking__items grid-card__items">
-      <li class="ranking__item grid-card__item">
-        <img
-          class="ranking__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_cc027713-ec46-4e7a-b361-70d359196062.jpg?v=1704238355"
-          alt="">
-        <span class="ranking__number">
-          一
-        </span>
-        <h3 class="ranking__title grid-card__title">水羊羹（楓）</h3>
-        <p class="ranking__price grid-card__price">¥600</p>
-      </li>
-      <li class="ranking__item grid-card__item">
-        <img
-          class="ranking__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_cc027713-ec46-4e7a-b361-70d359196062.jpg?v=1704238355"
-          alt="">
-        <span class="ranking__number">
-          一
-        </span>
-        <h3 class="ranking__title grid-card__title">水羊羹（楓）</h3>
-        <p class="ranking__price grid-card__price">¥600</p>
-      </li>
-      <li class="ranking__item grid-card__item">
-        <img
-          class="ranking__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_cc027713-ec46-4e7a-b361-70d359196062.jpg?v=1704238355"
-          alt="">
-        <h3 class="ranking__title grid-card__title">水羊羹（楓）</h3>
-        <p class="ranking__price grid-card__price">¥600</p>
-      </li>
-      <li class="ranking__item grid-card__item">
-        <img
-          class="ranking__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_cc027713-ec46-4e7a-b361-70d359196062.jpg?v=1704238355"
-          alt="">
-        <h3 class="ranking__title grid-card__title">水羊羹（楓）</h3>
-        <p class="ranking__price grid-card__price">¥600</p>
-      </li>
-      <li class="ranking__item grid-card__item">
-        <img
-          class="ranking__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_cc027713-ec46-4e7a-b361-70d359196062.jpg?v=1704238355"
-          alt="">
-        <h3 class="ranking__title grid-card__title">水羊羹（楓）</h3>
-        <p class="ranking__price grid-card__price">¥600</p>
-      </li>
+      {% assign collection = collections["ranking"] %}
+      {% for product in collection.products limit: 5 %}
+        <a class="ranking__link" href="{{ product.url }}">
+          <li class="ranking__item grid-card__item">
+            <img
+              class="ranking__img grid-card__img"
+              src="{{ product.featured_image | img_url: '500x' }}"
+              alt="月間ランキングの商品画像">
+
+            {% if section.settings.ranking_number == true %}
+              <span class="ranking__number ranking__number-{{ forloop.index }}">
+                {{ forloop.index | replace: "1", "一" | replace: "2", "二" | replace: "3", "三" | replace: "4", "四" | replace: "5", "五" }}
+              </span>
+            {% endif %}
+            <h3 class="ranking__title grid-card__title">{{ product.title }}</h3>
+            <p class="ranking__price grid-card__price">{{ product.price | money }}</p>
+          </li>
+        </a>
+      {% endfor %}
+
+
     </ul>
     <div class="ranking__btn">
-      <a href="">商品詳細をみる</a>
+      <a href="">もっとみる</a>
     </div>
 
   </div>
@@ -75,7 +50,9 @@
     margin-top: 0;
   }
   .grid-card {
-    padding: 80px 0;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.background_color }};
   }
 
   .grid-card__items {
@@ -100,18 +77,42 @@
     width: 100%;
     display: inline-block;
   }
-
+  .ranking__link {
+    text-decoration: none;
+    color: #020202;
+  }
   .ranking__number {
     margin: 0;
-    padding: 6.5px 7.5px 7.5px;
-    display: block;
+    /* padding: 6.5px 7.5px 7.5px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
     font-size: min(calc(24 / 1280 * 100vw), 24px);
     color: #fff;
     background: #C79B33;
+    width: 3.75vw;
+    height: 3.75vw;
   }
+
+  .ranking__number-1 {
+    background: #C79B33;
+  }
+  .ranking__number-2 {
+    background: #9A9A9A;
+  }
+  .ranking__number-3 {
+    background: #977C54;
+  }
+  .ranking__number-4 {
+    background: #DA9B8A;
+  }
+  .ranking__number-5 {
+    background: #DA9B8A;
+  }
+
   .grid-card__title {
     margin: 17px 0 0;
     font-size: min(calc(16 / 1280 * 100vw), 16px);
@@ -195,7 +196,60 @@
   {
     "name": "月間ランキング",
     "class": "banner-section",
-    "settings": [],
+    "settings": [
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "上の余白",
+        "min": 0,
+        "max": 120,
+        "step": 4,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "下の余白",
+        "min": 0,
+        "max": 120,
+        "step": 4,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "背景色",
+        "default": "#F0F1ED"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "タイトル",
+        "default": "月間ランキング"
+      }, {
+        "type": "text",
+        "id": "sub_title",
+        "label": "サブタイトル",
+        "default": "選ばれた和菓子をご堪能ください"
+
+      }, {
+        "type": "text",
+        "id": "btn_text",
+        "label": "ボタンテキスト",
+        "default": "もっとみる"
+      }, {
+        "type": "url",
+        "id": "btn_url",
+        "label": "ボタンリンク"
+      }, {
+        "type": "checkbox",
+        "id": "ranking_number",
+        "label": "ランキング番号を表示する",
+        "default": true
+      }
+    ],
     "blocks": [],
     "presets": [
       {

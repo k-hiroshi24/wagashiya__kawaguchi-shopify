@@ -8,28 +8,24 @@
             {% comment %} <img src="{{section.settings.image1 | img_url: 'master'}}" alt=""> {% endcomment %}
           <img
             class="img-text__img img01"
-            src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top___2_b5c13202-2f8b-45cb-a584-edeee4bec716.jpg?v=1704238380"
+            src="{{ section.settings.image1 | img_url: 'master' }}"
             alt="">
             {% comment %} <img src="{{section.settings.image2 | img_url: 'master'}}" alt=""> {% endcomment %}
           <img
             class="img-text__img img02"
-            src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/top___1_e370351a-ab52-4be6-bda6-bc8e7ffd25c9.jpg?v=1704238380"
+            src="{{ section.settings.image2 | img_url: 'master' }}"
             alt="">
 
         </div>
       </div>
 
       <div class="img-text__right">
-        <h3 class="img-text__title">夏にピッタリ！</h3>
+        <h3 class="img-text__title">{{ section.settings.title }}</h3>
         <div class="image-text__texts">
-          <p class="img-text__text">桃の栗まんじゅうが新発売です。</p>
-          <p class="img-text__text">冷えた麦茶との相性がとても良く、インスタ映えもします。</p>
-          <p class="img-text__text">
-            お写真を撮ってぜひ、楽しんでお食事ください。
-          </p>
+          <p class="img-text__text">{{ section.settings.text }}</p>
         </div>
 
-        <a href="" class="img-text__btn common-btn">商品詳細をみる</a>
+        <a href="{{ section.settings.btn_url }}" class="img-text__btn common-btn">{{ section.settings.btn_text }}</a>
       </div>
     </div>
   </div>
@@ -37,8 +33,9 @@
 
 <style>
   .img-text {
-    padding: 80px 0;
-    background-color: #fff;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.background_color }};
   }
   .img-text__inner {
     max-width: 1200px;
@@ -64,7 +61,7 @@
     display: inline-block;
 
   }
- 
+
   .img02 {
     aspect-ratio: 330 / 309;
     object-fit: cover;
@@ -87,7 +84,7 @@
     font-size: min(calc(40 / 1280 * 100vw), 40px);
     margin: 0;
   }
-  .image-text__texts{
+  .image-text__texts {
     margin-top: 20px;
   }
   .img-text__text {
@@ -116,9 +113,9 @@
 
   @media screen and (max-width: 750px) {
     .img-text {
-    padding: 40px 0;
-    background-color: #fff;
-  }
+      padding: 40px 0;
+      background-color: #fff;
+    }
     .img-text__contents {
       display: flex;
       flex-direction: column;
@@ -171,21 +168,62 @@
     "class": "section",
     "settings": [
       {
+        "type": "range",
+        "id": "padding_top",
+        "label": "上の余白",
+        "min": 0,
+        "max": 120,
+        "step": 4,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "下の余白",
+        "min": 0,
+        "max": 120,
+        "step": 4,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "背景色",
+        "default": "#fff",
+        "info": "背景色を選択してください。"
+      },
+      {
         "type": "image_picker",
         "id": "image1",
         "label": "画像1"
-      }, {
+      },
+      {
         "type": "image_picker",
         "id": "image2",
         "label": "画像2"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "タイトル",
+        "default": "夏にピッタリ！"
+      }, {
+        "type": "richtext",
+        "id": "text",
+        "label": "テキスト",
+        "default": "<p>桃の栗まんじゅうが新発売です。冷えた麦茶との相性がとても良く、インスタ映えもします。お写真を撮ってぜひ、楽しんでお食事ください。</p>"
+      }, {
+        "type": "url",
+        "id": "btn_url",
+        "label": "リンク先URL"
       }, {
         "type": "text",
-        "id": "text1",
-        "label": "テキスト1"
-      }, {
-        "type": "text",
-        "id": "text2",
-        "label": "テキスト2"
+        "id": "btn_text",
+        "label": "ボタンテキスト",
+        "default": "商品詳細をみる"
+
       }
     ],
     "blocks": [],

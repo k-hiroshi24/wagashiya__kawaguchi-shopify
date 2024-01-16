@@ -3,52 +3,30 @@
 <section class="ranking grid-card">
   <section class="section-title ranking-title">
     <h2 class="section-title__title ">
-      タイトルが入ります
+     {{ section.settings.title }}
     </h2>
     <p class="section-title__sub-title">
-      サブテキストが入ります
+      {{ section.settings.sub_title }}
     </p>
   </section>
   <div class="ranking__inner grid-card__inner inner">
     <ul class="new-item__items grid-card__items">
-      <li class="new-item__item grid-card__item">
-        <img
-          class="new-item__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_d69b8703-927a-414d-b7ef-78d37c3991bb.jpg?v=1704238354"
-          alt="">
-        <h3 class="ranking__title grid-card__title">わらび餅</h3>
-        <p class="ranking__price grid-card__price">¥600</p>
-      </li>
-      <li class="new-item__item grid-card__item">
-        <img
-          class="new-item__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_d69b8703-927a-414d-b7ef-78d37c3991bb.jpg?v=1704238354"
-          alt="">
-        <h3 class="ranking__title grid-card__title">わらび餅</h3>
-        <p class="ranking__price grid-card__price">¥600</p>
-      </li>
-      <li class="new-item__item grid-card__item">
-        <img
-          class="new-item__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_d69b8703-927a-414d-b7ef-78d37c3991bb.jpg?v=1704238354"
-          alt="">
-        <h3 class="ranking__title grid-card__title">わらび餅</h3>
-        <p class="ranking__price grid-card__price">¥600</p>
-      </li>
-      <li class="new-item__item grid-card__item">
-        <img
-          class="new-item__img grid-card__img"
-          src="https://cdn.shopify.com/s/files/1/0680/4848/6651/files/product_d69b8703-927a-414d-b7ef-78d37c3991bb.jpg?v=1704238354"
-          alt="">
-        <h3 class="ranking__title grid-card__title">わらび餅</h3>
-        <p class="ranking__price grid-card__price">¥600</p>
-      </li>
-
-
-    </ul>
-    <div class="ranking__btn">
-      <a href="">もっとみる</a>
-    </div>
+      {% assign collection = collections["new-item"] %}
+      {% for product in collection.products limit: 4%}
+        <li class="new-item__item grid-card__item">
+          <img
+            class="new-item__img grid-card__img"
+            src="{{ product.featured_image | img_url: '500x' }}"
+            alt="">
+          <h3 class="ranking__title grid-card__title">{{ product.title }}</h3>
+          <p class="ranking__price grid-card__price">{{ product.price | money }}</p>
+        </li>
+      {% endfor %}
+      </ul>
+      <div class="ranking__btn">
+        <a href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+      </div>
+     
 
   </div>
 </section>
@@ -156,7 +134,56 @@
   {
     "name": "新着情報",
     "class": "banner-section",
-    "settings": [],
+    "settings": [
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "上の余白",
+        "min": 0,
+        "max": 120,
+        "step": 4,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "下の余白",
+        "min": 0,
+        "max": 120,
+        "step": 4,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "背景色",
+        "default": "#fff",
+        "info": "背景色を選択してください。"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "タイトル",
+        "default": "新着情報"
+      }, {
+        "type": "text",
+        "id": "sub_title",
+        "label": "サブタイトル",
+        "default": "和菓子屋では日々新しい和菓子に挑戦しています。ぜひご堪能あれ。"
+
+      }, {
+        "type": "text",
+        "id": "btn_text",
+        "label": "ボタンテキスト",
+        "default": "もっとみる"
+      }, {
+        "type": "url",
+        "id": "btn_url",
+        "label": "ボタンリンク"
+      }
+    ],
     "blocks": [],
     "presets": [
       {

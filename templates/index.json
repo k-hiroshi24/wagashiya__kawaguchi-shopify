@@ -8,13 +8,28 @@
     "9a5d9457-f5d7-4d49-b97b-e1c557eb2528": {
       "type": "a-ranking",
       "settings": {
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "background_color": "#f0f1ed",
+        "title": "月間ランキング",
+        "sub_title": "選ばれた和菓子をご堪能ください",
+        "btn_text": "もっとみる",
+        "btn_url": "shopify:\/\/collections\/all",
+        "ranking_number": true
       }
     },
     "fc44bfce-9664-453d-a8c4-9b55272c2d3f": {
       "type": "a-img-text",
       "settings": {
-        "text1": "",
-        "text2": ""
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "background_color": "#fff",
+        "image1": "shopify:\/\/shop_images\/top___2_b5c13202-2f8b-45cb-a584-edeee4bec716.jpg",
+        "image2": "shopify:\/\/shop_images\/product_c93dd249-9490-4fe5-8dfc-08679e37a6d6.jpg",
+        "title": "夏にピッタリ！",
+        "text": "<p>桃の栗まんじゅうが新発売です。<br\/>冷えた麦茶との相性がとても良く、インスタ映えもします。<br\/>お写真を撮ってぜひ、楽しんでお食事ください。<\/p>",
+        "btn_url": "shopify:\/\/products\/momono-kurimanju",
+        "btn_text": "商品詳細をみる"
       }
     },
     "74535ea2-99fc-499e-a67a-ba00bf6be8b8": {
